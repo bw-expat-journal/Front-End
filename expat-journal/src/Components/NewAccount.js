@@ -1,15 +1,41 @@
-import React from 'react';
-import signUpForm from './customHooks'
+import React, { useState }from 'react';
+//import signUpForm from './customHooks'
 
 
-const {inputs, handleChange, handleSubmit} = signUpForm(signUP);
+// const {inputs, handleChange, handleSubmit} = signUpForm(signUP);
 
-const signUP = () => {
-    alert(`New User !! Name: ${inputs.firstName} ${inputs.lastName}
-    Email: ${inputs.email}`)
-}
+// const signUP = () => {
+//     alert(`New User !! Name: ${inputs.firstName} ${inputs.lastName}
+//     Email: ${inputs.email}`)
+// }
 
 const NewAccount = () => {
+
+
+//     const {inputs, handleChange, handleSubmit} = signUpForm(signUP);
+
+// const signUP = () => {
+//     alert(`New User !! Name: ${inputs.firstName} ${inputs.lastName}
+//     Email: ${inputs.email}`)
+// }
+
+
+    const [inputs, setInputs] = useState({ firstName: '', lastName: '',password0:'', password1:''});
+
+    
+    const handleSubmit = (event) => {
+        console.log('UserState: ', inputs)
+        if (event) {
+            event.preventDefault();
+        }
+     
+    }
+
+    const handleChange = (event) => {
+        event.persist();
+        setInputs(inputs => ({...inputs, [event.target.name] : event.target.value }))
+    }
+
     return (
 
         <form onSubmit = {handleSubmit}>
