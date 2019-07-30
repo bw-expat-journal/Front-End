@@ -9,7 +9,7 @@ export default function AppRouter() {
     return <div className="page-view-ui">
         <Switch>
             <Route path='/' exact component={NewAccount}/>
-            <Route Path='/login' component={Login}/>
+            <Route path='/login' component={Login}/>
             <Route path='/submit' component={JournalForm}/>
         </Switch>
     </div>

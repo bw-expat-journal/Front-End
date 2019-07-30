@@ -15,7 +15,7 @@ useEffect(() => {
     const handleChange = e => {
         const updatedPost = {
             ...post,
-            [e.target.location]: e.target.value
+            [e.target.name]: e.target.value
         };
         setPost(updatedPost)
     };
