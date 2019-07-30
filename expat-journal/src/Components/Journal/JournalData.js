@@ -1,7 +1,14 @@
+
+
 export const PostDetails = [
     {
-      name: "Test Data",
+      location: "Test Data",
+      traveler: "Test Data",
       submission: "Test Data",
-      traveler: "Test Data"
+    },
+    {
+      location: "Test Data",
+      traveler: "Test Data",
+      submission: "Test Data",
     }
   ];

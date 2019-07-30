@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
-const JournalForm = ({list, setList, postEdit, setPostEdit, editPost}) => {
-const [post, setPost] = useState({name: "", submission: "", traveler: ""});
+const JournalForm = ({ list, setList, postEdit, setPostEdit, editPost }) => {
+const [post, setPost] = useState({location: "", traveler: "", submission: ""});
 
 useEffect(() => {
 
     if (postEdit) {
-        setPostEdit(postEdit)
+        setPost(postEdit)
     }
 
     }, [postEdit])
@@ -15,7 +15,7 @@ useEffect(() => {
     const handleChange = e => {
         const updatedPost = {
             ...post,
-            [e.target.name]: e.target.value
+            [e.target.location]: e.target.value
         };
         setPost(updatedPost)
     };
@@ -25,64 +25,58 @@ useEffect(() => {
     if (postEdit) {
         editPost(post);
         setPostEdit(null);
-    }else if (
-        post.name !== "" &&
-        post.submission !== "" &&
-        post.traveler !== ""
+    } else if (
+        post.location !== "" &&
+        post.traveler !== "" &&
+        post.submission !== "" 
     ) {
         setList([...list, post])
     }
-        setPost({ name: "", email: "", traveler: "" });
+        setPost({ location: "", traveler: "", submission: "" });
   };
-    const styled = {
-      backgroundColor: '#C9E5EB',
-      alignItems: 'flex-end',
-      justifyContent: 'space-around',
-      font: 'times-new-roman'
-    }
+    
 
     return (
      <form onSubmit={handleSubmit}>
-            <span>{postEdit ? "Edit a Post" : "Add a Post"}</span> 
-      <fieldset className = "field-container" style ={styled}>
-            <label htmlFor="name">
-             Name:{" "}
+      <fieldset> 
+            <legend>{postEdit ? "Edit a Post" : "Add a Post"}</legend> 
+            <label htmlFor="location">
+             Location:{" "}
              <input
                 type="text"
-                name="name"
-                placeholder="Enter name"
-                value={post.name}
+                name="location"
+                placeholder="Enter location"
+                value={post.location}
                 onChange={handleChange}
               />
             </label>
-             <label htmlFor="traveler">
-           Traveler Type:{" "}
-           <input
-             list="traveler"
-             name="traveler"
-             placeholder="Traveler Type"
-             value={post.traveler}
-             onChange={handleChange}
-           />
-           <br/>
+            <label htmlFor="traveler">
+              Traveler Type: {" "}
+              <input
+               list="traveler"
+               name="traveler"
+               placeholder="Traveler Type"
+               value={post.traveler}
+               onChange={handleChange}
+               />
+              <datalist id="traveler">
+                <option value="Expatriate" />
+                <option value="World Traveler" />
+                <option value="Backpacker" />
+                <option value="Photographer" />
+                <option value="Traveling for Work" />
+              </datalist>
+            </label>
             <label htmlFor="submission">
-             Submit a Post :{" "}
-             <textarea cols={52} rows={18}
-                type="submission"
+             Submit a Post:{" "}
+             <textarea cols={30} rows={1}
+                type="text"
                 name="submission"
                 placeholder="Enter Post Here"
                 value={post.submission}
                 onChange={handleChange}
              />
             </label>
-          <datalist id="traveler">
-            <option value="Expatriate" />
-            <option value="World Traveler" />
-            <option value="Backpacker" />
-            <option value="Photographer" />
-            <option value="Traveling for Work" />
-          </datalist>
-        </label>
         <input type="submit" value="Submit" />    
       </fieldset>
      </form>
@@ -91,3 +85,4 @@ useEffect(() => {
 };
 
 export default JournalForm
+

@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
+import NewAccount from './Components/NewAccount'
+
+// import Login from "../src/Components/Login/Login";
+import Login from "../src/Components/Login"
 
 import JournalForm from './Components/Journal/JournalForm';
 import JournalFormCard from './Components/Journal/JournalFormCard';
@@ -24,12 +28,18 @@ function App() {
       editPost={editPost}
     />
     {list.map((post, index) => {
-      return (
-        <JournalFormCard key={index} post={post} setPostEdit={setPostEdit} />
-      );
+      <JournalFormCard key={index} post={post} setPostEdit={setPostEdit} />
     })}
+     <header className="App-header">
+      <Login />
+
+
+      </header>
+
+      <NewAccount/>
   </div>
   );
+ 
 }
 
 export default App;
