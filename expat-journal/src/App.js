@@ -5,13 +5,7 @@ import TabNav from '../src/Components/TabNav';
 import AppRouter from '../src/AppRouter'
 
 function App() {
-  const [list, setList] = useState([...PostDetails])
-  const[postEdit, setPostEdit] = useState(null);
 
-  const editPost = post => {
-    const editIndex = list.indexOf(postEdit);
-    setList(list.map((submission, index) => (index === editIndex ? post : submission)))
-  }
 
   return (
     <main>
