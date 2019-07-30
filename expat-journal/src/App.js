@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+import JournalForm from './Components/Journal/JournalForm';
+import JournalFormCard from './Components/Journal/JournalFormCard';
+import { PostDetails } from './Components/Journal/JournalData'
+
 function App() {
+  const [list, setList] = useState([...PostDetails])
+  const[postEdit, setPostEdit] = useState(null);
+
+  const editPost = post => {
+    const editIndex = list.indexOf(postEdit);
+    setList(list.map((submission, index) => (index === editIndex ? post : submission)))
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+    <JournalForm
+      list={list}
+      setList={setList}
+      postEdit={postEdit}
+      setPostEdit={setPostEdit}
+      editPost={editPost}
+    />
+    {list.map((post, index) => {
+      return (
+        <JournalFormCard key={index} post={post} setPostEdit={setPostEdit} />
+      );
+    })}
+  </div>
   );
 }
 
