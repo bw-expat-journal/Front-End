@@ -1,20 +1,65 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
+
+const initialUser = {
+    username: '',
+    password: '',
+  }
+
+
 export default function Login(props) {
-    const [username, setUsername] = useState({})
-  
+    console.log(props)
+    const [user, setUsername] = useState({})
+
+    const inputHandler = event => {
+        const { name, value } = event.target;
+        setUsername({ user: { ...user, [name]: value } })
+      }
+    
+    const submitHandler = event => {
+        event.preventDefault();
+        // add heruko api link here:
+        axios.post(`https://expatjournal.herokuapp.com/login`, user)
+          .then(res => {
+              console.log(res.data);
+            if (res.status === 200 && res.data) {
+              localStorage.setItem('jwt', res.data.token)
+              props.history.push('/')
+            } else {
+              throw new Error();
+            }
+          })
+          .catch(err => {
+            setUsername({
+              message: 'Authentication failed',
+              user: { ...initialUser }
+            })
+          })
+      }
+    
 
 return (
     <div className="login-form">
     <div className="container">
-    <form>
-    <label className="label">Email Address</label>
-    <input className="input" type="email" name="email" required />
+
+    <form onSubmit={submitHandler}>
+          <section>
+            <h1>Login Page</h1>
+          </section>
+    <label htmlFor="username">Username</label>
+    <input className="input" 
+        type="text"
+        id="username" 
+        name="username" required 
+        value={user.username}
+        onChange={inputHandler}
+        />
     
     <label className="label">Password</label>
     <input className="input" type="password" name="password" required />
-
+    
+    <button type="submit">Submit</button>
     </form>
     </div>
 </div>
