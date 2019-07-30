@@ -41,13 +41,7 @@ const NewAccount = () => {
 
       }, []);
     
-      const registerNewUser = inputs => {
-          axios.post('https://expat-journals.herokuapp.com/api/v1/auth/signup', inputs)
-          .then(response => {
-              console.log(response)
-              setInputs([...inputs, response.data])
-          })
-      }
+
 
 
 
