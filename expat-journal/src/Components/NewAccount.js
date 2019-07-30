@@ -1,5 +1,7 @@
-import React, { useState }from 'react';
+import React, { useState, useEffect }from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
+
 
 const NewAccount = () => {
 
@@ -18,6 +20,30 @@ const NewAccount = () => {
         event.persist();
         setInputs(inputs => ({...inputs, [event.target.name] : event.target.value }))
     }
+
+    useEffect(() => {
+        const registerUser = () => {
+          axios.post('https://expat-journals.herokuapp.com/api/v1/auth/signup')
+    
+          .then(response => {
+            console.log('user', response)
+            const user = response
+             setInputs(user)
+          })
+    
+          .catch(error => {
+            console.log('ERROR', error)
+          })
+        }
+        
+        registerUser();
+        //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
+      }, []);
+    
+
+
+
+                        // Add PlaceHolders to Input Bar!
 
     return (
 
