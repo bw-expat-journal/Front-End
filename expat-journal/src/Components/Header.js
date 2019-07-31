@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
   color: white;
   img {
     width: 25%;
-    margin-left: 13%;
+    margin-left: 8%;
   }
   display: flex;
   justify-content: space-between;

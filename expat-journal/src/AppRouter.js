@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import axios from 'axios'
+import styled from 'styled-components';
 
 import Login from './Components/Login';
 import NewAccount from './Components/NewAccount';
 import JournalForm from './Components/Journal/JournalForm';
 import JournalFormCard from './Components/Journal/JournalFormCard';
 import { PostDetails } from './Components/Journal/JournalData';
-import { get } from 'https';
+
+const StyledContainer = styled.div`
+  background: #3C8C9E;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+`;
 
 export default function AppRouter() {
 const [list, setList] = useState([])
@@ -51,11 +58,15 @@ const editIndex = list.indexOf(postEdit);
                 setPostEdit={setPostEdit}
                 editPost={editPost}
               />
+              <StyledContainer>
                {list.map((post, index) => {
                return(
+                 
                <JournalFormCard key={index} post={post} setPostEdit={setPostEdit} />
+               
                );
               })};
+              </StyledContainer>
               </div>}
             />
             <Route path='/sign-up' component={NewAccount}/>
