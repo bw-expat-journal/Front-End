@@ -69,7 +69,7 @@ useEffect(() => {
             </label>
             <label htmlFor="submission">
              Submit a Post:{" "}
-             <textarea cols={30} rows={1}
+             <textarea cols={30} rows={10}
                 type="text"
                 name="submission"
                 placeholder="Enter Post Here"
@@ -80,6 +80,8 @@ useEffect(() => {
         <input type="submit" value="Submit" />    
       </fieldset>
      </form>
+     
+
     );
 
 };
