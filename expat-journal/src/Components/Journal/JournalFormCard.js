@@ -13,3 +13,11 @@ const JournalFormCard = ({ user, setPostEdit }) => {
   };
   
   export default JournalFormCard;
+
+  // const [list, setList] = useState([...PostDetails])
+  // const[postEdit, setPostEdit] = useState(null);
+
+  // const editPost = post => {
+  //   const editIndex = list.indexOf(postEdit);
+  //   setList(list.map((submission, index) => (index === editIndex ? post : submission)))
+  // }
