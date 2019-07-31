@@ -88,14 +88,3 @@ useEffect(() => {
 
 export default JournalForm
 
-//From App.js
-{/* <JournalForm
-      list={list}
-      setList={setList}
-      postEdit={postEdit}
-      setPostEdit={setPostEdit}
-      editPost={editPost}
-    />
-    {list.map((post, index) => {
-      <JournalFormCard key={index} post={post} setPostEdit={setPostEdit} />
-    })} */}
