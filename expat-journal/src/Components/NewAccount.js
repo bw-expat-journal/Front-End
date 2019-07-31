@@ -35,47 +35,12 @@ const NewAccount = () => {
         setInputs(inputs => ({...inputs, [event.target.name] : event.target.value }))
     }
 
-    // useEffect(() => {
-    //     const registerUser = () => {
-    //       axios.post('https://expat-journals.herokuapp.com/api/v1/auth/signup')
-    
-    //       .then(response => {
-    //         console.log('user', response)
-    //         const user = response.data
-    //         setInputs(user)
-    //       })
-    
-    //       .catch(error => {
-    //         console.log('ERROR', error)
-    //       })
-    //     }
-        
-    //     registerUser();
-    //     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-
-    //   }, []);
-    
-    //   const addNewUser = newUser =>{
-    //       axios.post(`'https://expat-journals.herokuapp.com/api/v1/auth/signup'`, newUser)
-
-    //       .then(response => {
-    //           console.log(response)
-    //       })
-
-    //       .catch(error => {
-    //           console.log(error)
-    //       })
-    //       addNewUser();
-    //   }
-
-
-
       
-
     return (
-
+        <div>
         <Form onSubmit = {handleSubmit}>
             <Legend>Create an Account</Legend>
+            <Span>It's free and only takes a minute</Span>
            <div>
             <Inputs>
                 <label>First Name</label>
@@ -100,6 +65,8 @@ const NewAccount = () => {
             </div>
             <Button type = 'submit' >Sign Up</Button>
         </Form>
+        <div class = "previous">Already Have an Account? Login Here</div>
+        </div>
     )
 }
 
@@ -112,25 +79,32 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-background: #c9e5eb
+background: #f1ffff;
 padding: 5px;
 margin:5px;
 border-radius: 8px;
 color: #1f4852;
 font-size: 20px;
+width: 40rem;
+margin-top: 5rem;
 
 `
 const Legend = styled.legend`
 font-size: 28px;
-margin: 5px;
+margin: 26px;
+
+
 `
 
 const Button = styled.button`
 border-radius: 8px;
-background-color: white;
-color:blue;
-border: blue;
+border: none;
+color: white;
 padding: 15px 32px;
+margin: 15px;
+margin-top: 15px;
+background: #3C8C9E
+font-size: 1rem;
 `
 const Inputs = styled.div`
 margin: 5px;
@@ -139,8 +113,13 @@ flex-direction: column;
 `
 
 const Inputt = styled.input`
-border: solid 2px #3c8c9e;
+border: solid 1.8px #aacddf;
 border-radius: 8px;
 width: 27rem;
 height: 2rem;
+`
+
+const Span = styled.span`
+margin-bottom: 15px;
+font-size: 19px;
 `
