@@ -5,13 +5,27 @@ import axios from 'axios';
 
 const NewAccount = () => {
 
-    const [inputs, setInputs] = useState({ firstName: '', lastName: '',password0:'', password1:''});
+    const [inputs, setInputs] = useState({ first_name: '', last_name: '', password:'', confirm_password:'', email: ''});
 
-    
+    const registerUser = (newUser) => {
+        axios.post('https://expat-journals.herokuapp.com/api/v1/auth/signup',newUser)
+  
+        .then(response => {
+          console.log('user', response)
+          const user = response.data
+          setInputs(user)
+        })
+  
+        .catch(error => {
+          console.log('ERROR', error.response)
+        })
+      }
+
     const handleSubmit = (event) => {
-        console.log('UserState: ', inputs)
+        // console.log('UserState: ', inputs)
         if (event) {
             event.preventDefault();
+         registerUser(inputs);     
         }
      
     }
@@ -21,38 +35,38 @@ const NewAccount = () => {
         setInputs(inputs => ({...inputs, [event.target.name] : event.target.value }))
     }
 
-    useEffect(() => {
-        const registerUser = () => {
-          axios.get('https://expat-journals.herokuapp.com/api/v1/auth/signup')
+    // useEffect(() => {
+    //     const registerUser = () => {
+    //       axios.post('https://expat-journals.herokuapp.com/api/v1/auth/signup')
     
-          .then(response => {
-            console.log('user', response)
-            const user = response.data
-            setInputs(user)
-          })
+    //       .then(response => {
+    //         console.log('user', response)
+    //         const user = response.data
+    //         setInputs(user)
+    //       })
     
-          .catch(error => {
-            console.log('ERROR', error)
-          })
-        }
+    //       .catch(error => {
+    //         console.log('ERROR', error)
+    //       })
+    //     }
         
-        registerUser();
-        //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
+    //     registerUser();
+    //     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
 
-      }, []);
+    //   }, []);
     
-      const addNewUser = newUser =>{
-          axios.post(`'https://expat-journals.herokuapp.com/api/v1/auth/signup'`, newUser)
+    //   const addNewUser = newUser =>{
+    //       axios.post(`'https://expat-journals.herokuapp.com/api/v1/auth/signup'`, newUser)
 
-          .then(response => {
-              console.log(response)
-          })
+    //       .then(response => {
+    //           console.log(response)
+    //       })
 
-          .catch(error => {
-              console.log(error)
-          })
-          addNewUser();
-      }
+    //       .catch(error => {
+    //           console.log(error)
+    //       })
+    //       addNewUser();
+    //   }
 
 
 
@@ -65,11 +79,11 @@ const NewAccount = () => {
            <div>
             <Inputs>
                 <label>First Name</label>
-                <Inputt type = 'text' name = 'firstName' onChange = {handleChange} value = {inputs.firstName} required/>
+                <Inputt type = 'text' name = 'first_name' onChange = {handleChange} value = {inputs.first_name} required/>
             </Inputs>
             <Inputs>
                 <label>Last Name</label>
-                <Inputt type = 'text' name = 'lastName' onChange = {handleChange} value = {inputs.lastName} required/>
+                <Inputt type = 'text' name = 'last_name' onChange = {handleChange} value = {inputs.last_name} required/>
             </Inputs>
             <Inputs>
             <label>Enter Your Email</label>
@@ -77,11 +91,11 @@ const NewAccount = () => {
             </Inputs>
             <Inputs>
             <label>Password</label>
-                <Inputt type = 'password' name = 'password0' onChange = {handleChange} value = {inputs.password0} required/>
+                <Inputt type = 'password' name = 'password' onChange = {handleChange} value = {inputs.password} required/>
             </Inputs>
             <Inputs>
             <label>Re-enter Password</label>
-                <Inputt type = 'password' name = 'password1' onChange = {handleChange} value = {inputs.password1} required/>
+                <Inputt type = 'password' name = 'confirm_password' onChange = {handleChange} value = {inputs.confirm_password} required/>
             </Inputs>
             </div>
             <Button type = 'submit' >Sign Up</Button>
