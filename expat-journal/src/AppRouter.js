@@ -9,6 +9,7 @@ import JournalFormCard from './Components/Journal/JournalFormCard';
 import { PostDetails } from './Components/Journal/JournalData';
 import { get } from 'https';
 
+
 export default function AppRouter() {
 const [list, setList] = useState([])
 useEffect (() => {
@@ -60,6 +61,8 @@ const editIndex = list.indexOf(postEdit);
             />
             <Route path='/sign-up' component={NewAccount}/>
             <Route path='/login' component={Login}/>
+            {/* <Route path='/home' component={Home}/> */}
+            <Route path='/home' component={() => window.location.href = 'https://relaxed-yonath-627a58.netlify.com/index.html'}/>
             
         </Switch>
     </div>
