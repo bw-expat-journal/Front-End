@@ -5,14 +5,12 @@ import TabNav from '../src/Components/TabNav';
 import AppRouter from '../src/AppRouter'
 
 function App() {
-
-
   return (
-    <main>
-   <Header />
-   <TabNav />
-   <AppRouter />
-  </main>
+   <main>
+     <Header />
+     <TabNav />
+     <AppRouter />
+   </main>
   );
  
 }
