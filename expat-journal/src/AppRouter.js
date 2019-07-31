@@ -5,6 +5,7 @@ import NewAccount from './Components/NewAccount';
 import JournalForm from './Components/Journal/JournalForm';
 import JournalFormCard from './Components/Journal/JournalFormCard';
 import { PostDetails } from './Components/Journal/JournalData';
+
 export default function AppRouter() {
     const [list, setList] = useState([...PostDetails])
 const[postEdit, setPostEdit] = useState(null);
