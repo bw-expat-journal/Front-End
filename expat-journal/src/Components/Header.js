@@ -6,6 +6,8 @@ const StyledHeader = styled.header`
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
   background: #1F4852;
   color: white;
+  width: 100%;
+  
   img {
     width: 25%;
     margin-left: 8%;
