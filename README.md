@@ -5,4 +5,5 @@ Expat Journal is an app that avails travellers (expatriate) the ability to show 
 Check out the Application [Here](#)
 
 
-# Link to Product Canvas https://docs.google.com/document/d/1EGGg6r0eoXauKAv70OptMaCKRBlZm1BM_5miGzqpHQI/edit?usp=sharing
+# Link to Product Canvas 
+https://docs.google.com/document/d/1EGGg6r0eoXauKAv70OptMaCKRBlZm1BM_5miGzqpHQI/edit?usp=sharing
