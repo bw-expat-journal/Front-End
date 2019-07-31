@@ -35,43 +35,7 @@ const NewAccount = () => {
         setInputs(inputs => ({...inputs, [event.target.name] : event.target.value }))
     }
 
-    // useEffect(() => {
-    //     const registerUser = () => {
-    //       axios.post('https://expat-journals.herokuapp.com/api/v1/auth/signup')
-    
-    //       .then(response => {
-    //         console.log('user', response)
-    //         const user = response.data
-    //         setInputs(user)
-    //       })
-    
-    //       .catch(error => {
-    //         console.log('ERROR', error)
-    //       })
-    //     }
-        
-    //     registerUser();
-    //     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-
-    //   }, []);
-    
-    //   const addNewUser = newUser =>{
-    //       axios.post(`'https://expat-journals.herokuapp.com/api/v1/auth/signup'`, newUser)
-
-    //       .then(response => {
-    //           console.log(response)
-    //       })
-
-    //       .catch(error => {
-    //           console.log(error)
-    //       })
-    //       addNewUser();
-    //   }
-
-
-
       
-
     return (
 
         <Form onSubmit = {handleSubmit}>
