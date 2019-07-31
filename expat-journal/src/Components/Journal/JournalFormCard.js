@@ -13,7 +13,7 @@ const JournalFormCard = ({ post, setPostEdit }) => {
         <h2>Check out recent submissions from our users:</h2>
         <h2>Location: {post.location}</h2> 
         <h2>Traveler Type: {post.traveler}</h2> 
-        <h2>Post: {post.submission}</h2> 
+       <h2>Post: {post.submission}</h2> 
         <button onClick={() => setPostEdit(post)}>Edit</button>
       </div>
     );
