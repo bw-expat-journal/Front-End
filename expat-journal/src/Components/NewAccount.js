@@ -41,7 +41,18 @@ const NewAccount = () => {
 
       }, []);
     
+      const addNewUser = newUser =>{
+          axios.post(`'https://expat-journals.herokuapp.com/api/v1/auth/signup'`, newUser)
 
+          .then(response => {
+              console.log(response)
+          })
+
+          .catch(error => {
+              console.log(error)
+          })
+          addNewUser();
+      }
 
 
 
@@ -54,23 +65,23 @@ const NewAccount = () => {
            <div>
             <Inputs>
                 <label>First Name</label>
-                <Inputt type = 'text' name = 'firstName' placeholder = 'First Name' onChange = {handleChange} value = {inputs.firstName} required/>
+                <Inputt type = 'text' name = 'firstName' onChange = {handleChange} value = {inputs.firstName} required/>
             </Inputs>
             <Inputs>
                 <label>Last Name</label>
-                <Inputt type = 'text' name = 'lastName' placeholder = 'Last Name' onChange = {handleChange} value = {inputs.lastName} required/>
+                <Inputt type = 'text' name = 'lastName' onChange = {handleChange} value = {inputs.lastName} required/>
             </Inputs>
             <Inputs>
             <label>Enter Your Email</label>
-                <Inputt type = 'email' name = 'email' placeholder = 'Enter Your Email Here' onChange = {handleChange} value = {inputs.email} required/>
+                <Inputt type = 'email' name = 'email' onChange = {handleChange} value = {inputs.email} required/>
             </Inputs>
             <Inputs>
             <label>Password</label>
-                <Inputt type = 'password' name = 'password0' placeholder = 'Create a Password' onChange = {handleChange} value = {inputs.password0} required/>
+                <Inputt type = 'password' name = 'password0' onChange = {handleChange} value = {inputs.password0} required/>
             </Inputs>
             <Inputs>
             <label>Re-enter Password</label>
-                <Inputt type = 'password' name = 'password1' placeholder = 'Re-enter Your Password' onChange = {handleChange} value = {inputs.password1} required/>
+                <Inputt type = 'password' name = 'password1' onChange = {handleChange} value = {inputs.password1} required/>
             </Inputs>
             </div>
             <Button type = 'submit' >Sign Up</Button>

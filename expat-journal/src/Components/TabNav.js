@@ -14,7 +14,7 @@ const Nav = props => (
 
 const createLabel = (iconName, labelText) => <span><Icon name={iconName} />{labelText}</span>
 
-const signUpLabel = createLabel("sign-up", "Sign-Up")
+const signUpLabel = createLabel("signup", "Sign-Up")
 const characterLabel = createLabel("login", "Login")
 const journalsLabel = createLabel("post", "Create Post")
 
