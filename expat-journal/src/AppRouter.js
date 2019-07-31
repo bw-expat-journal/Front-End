@@ -41,7 +41,7 @@ const editIndex = list.indexOf(postEdit);
     return <div className="page-view-ui">
         <Switch>
             <Route 
-              path='/' 
+              exact path='/' 
               render={(props) =>
               <div> 
               <JournalForm {...props} 
@@ -58,8 +58,9 @@ const editIndex = list.indexOf(postEdit);
               })};
               </div>}
             />
-            <Route exact path='/sign-up' component={NewAccount}/>
+            <Route path='/sign-up' component={NewAccount}/>
             <Route path='/login' component={Login}/>
+            
         </Switch>
     </div>
 }
