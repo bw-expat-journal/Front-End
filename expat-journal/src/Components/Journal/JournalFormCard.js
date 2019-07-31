@@ -1,5 +1,44 @@
 import React from 'react';
+import styled from 'styled-components';
 
+const StyledCard = styled.div`
+  background: white;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 2rem;
+  text-align: center;
+
+  p.location {
+    font-size: 1.5rem; 
+    text-align: center;
+    img {
+      width: 1.3rem;
+      padding-right: .5rem;
+    }
+  }
+
+  p.message {
+    margin: 2rem;
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .post-footer {
+    margin: 2rem;
+  }
+
+  button {
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius:  15px;
+    border: none;
+    background: #3C8C9E;
+    color: white;
+  }
+
+`
 // const [list, setList] = useState([...PostDetails])
 // const[postEdit, setPostEdit] = useState(null);
 
@@ -10,14 +49,24 @@ import React from 'react';
 const JournalFormCard = ({ post, setPostEdit }) => {
   console.log(post)
     return (
-      <div className = "user-story-container">
-      <h2>Check out recent submissions from our users:</h2>
-        <h2>Location: {post.location}</h2> 
-        <h2>Traveler Type: {post.traveler}</h2> 
-       <h2>Post: {post.submission}</h2>
-       <img src= {post.image_url} alt= ''/> 
+      <StyledCard>
+        {
+          post.image_url &&  <img src= {post.image_url} alt= ''/> 
+        }
+        {
+          post.message &&  <p className='message'>{post.message}</p>
+        }
+       <div className='post-footer'>
+        <p className='location'>
+        <img src='https://image.flaticon.com/icons/svg/149/149984.svg' alt='location'/>
+        {post.location}</p> 
+        <p className='caption'>{post.caption}</p>
+        
         <button onClick={() => setPostEdit(post)}>Edit</button>
-      </div>
+        </div>
+      
+
+      </StyledCard>
     );
   };
   
