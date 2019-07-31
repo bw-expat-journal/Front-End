@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +6,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #c9e5eb
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button:hover{
+
+  background: #f1ffff;
+  color: #1f4852;
+  border: 1.8px solid #aacddf;
+}
+
+.previous{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 6rem;
+  font-size: 18px;
+  color: #1f4852
 }
