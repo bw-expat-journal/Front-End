@@ -1,0 +1,4 @@
+[build] 
+base="expatjournal"
+publish="expatjournal/build/"
+command="yarn build"
