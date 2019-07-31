@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import Header from '../src/Components/Header';
 import TabNav from '../src/Components/TabNav';
 import AppRouter from '../src/AppRouter'
