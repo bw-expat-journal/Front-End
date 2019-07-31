@@ -34,8 +34,8 @@ export default function Login(props) {
           .then(res => {
               console.log(res.data);
             if (res.status === 200 && res.data) {
-              localStorage.setItem('jwt', res.data.token)
-              // props.history.push('/')
+              localStorage.setItem('token', res.data.token)
+              props.history.push('/')
             }
           })
           .catch(err => {

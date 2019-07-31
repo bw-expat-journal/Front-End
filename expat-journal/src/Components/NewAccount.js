@@ -11,9 +11,9 @@ const NewAccount = () => {
         axios.post('https://expat-journals.herokuapp.com/api/v1/auth/signup',newUser)
   
         .then(response => {
-          console.log('user', response)
-          const user = response.data
-          setInputs(user)
+          console.log('user', response.data.token)
+          localStorage.setItem('token', response.data.token)
+          
         })
   
         .catch(error => {
