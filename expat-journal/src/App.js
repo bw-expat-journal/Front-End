@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import NewAccount from './Components/NewAccount'
+import Header from '../src/Components/Header';
+import TabNav from '../src/Components/TabNav';
+import AppRouter from '../src/AppRouter'
 
 function App() {
+
   return (
-    <div className="App">
-
-      <NewAccount/>
-
-    
-    </div>
+   <main>
+     <Header />
+     <TabNav />
+     <AppRouter />
+   </main>
   );
+ 
 }
 
 export default App;
