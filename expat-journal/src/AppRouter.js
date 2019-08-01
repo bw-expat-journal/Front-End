@@ -46,6 +46,15 @@ const editPost = post => {
 const editIndex = list.indexOf(postEdit);
   setList(list.map((submission, index) => (index === editIndex ? post : submission)))
 }
+
+
+const deletePost = id => {
+  console.log(id);
+  setList(list.filter(post => post.id !== id));
+}
+
+
+
     return <div className="page-view-ui">
         <Switch>
             <Route 
@@ -63,7 +72,11 @@ const editIndex = list.indexOf(postEdit);
                {list.map((post, index) => {
                return(
                  
-               <JournalFormCard key={index} post={post} setPostEdit={setPostEdit} />
+               <JournalFormCard 
+                key={index} 
+                post={post} 
+                setPostEdit={setPostEdit} 
+                deletePost={deletePost}/>
                
                );
               })};

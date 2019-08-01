@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'
 
 
-const NewAccount = () => {
+const NewAccount = (props) => {
 
     const [inputs, setInputs] = useState({ first_name: '', last_name: '', password:'', confirm_password:'', email: ''});
 
@@ -14,6 +14,8 @@ const NewAccount = () => {
         .then(response => {
           console.log('user', response.data.token)
           localStorage.setItem('token', response.data.token)
+          props.history.push('/login')
+
           
         })
   
