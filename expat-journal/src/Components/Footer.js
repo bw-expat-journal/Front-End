@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import TabNav from './TabNav';
+
 
 const StyledFooter = styled.footer`
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
   background: #1F4852;
   color: white;
   display: flex;
-  align-items: center;
+  justify-content: center;
    p {
-      margin-left: 5rem;
       color: white;
       padding: 1rem;
       font-family: 'Raleway', sans-serif;
