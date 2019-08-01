@@ -10,7 +10,7 @@ import JournalFormCard from './Components/Journal/JournalFormCard';
 import { PostDetails } from './Components/Journal/JournalData';
 
 const StyledContainer = styled.div`
-  background: #3C8C9E;
+  background: #C9E5EB;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
