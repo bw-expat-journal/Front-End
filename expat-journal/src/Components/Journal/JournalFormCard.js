@@ -46,7 +46,7 @@ const StyledCard = styled.div`
 //   const editIndex = list.indexOf(postEdit);
 //   setList(list.map((submission, index) => (index === editIndex ? post : submission)))
 // }
-const JournalFormCard = ({ post, setPostEdit }) => {
+const JournalFormCard = ({ post, setPostEdit, deletePost }) => {
   console.log(post)
     return (
       <StyledCard>
@@ -65,9 +65,9 @@ const JournalFormCard = ({ post, setPostEdit }) => {
         <button onClick={() => setPostEdit(post)}>Edit</button>
         </div>
 
-        {/* <button onClick={() => deletePost(list.id)} className="button muted-button"> */}
-  {/* Delete
-</button> */}
+        <button onClick={() => deletePost(post.id)} className="button muted-button">
+   Delete
+</button>
       
 
       </StyledCard>

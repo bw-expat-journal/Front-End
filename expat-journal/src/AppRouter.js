@@ -48,9 +48,10 @@ const editIndex = list.indexOf(postEdit);
 }
 
 
-// const deletePost = id => {
-//   setPostEdit(list.filter(list => list.id !== id))
-// }
+const deletePost = id => {
+  console.log(id);
+  setList(list.filter(post => post.id !== id));
+}
 
 
 
@@ -66,13 +67,16 @@ const editIndex = list.indexOf(postEdit);
                 postEdit={postEdit}
                 setPostEdit={setPostEdit}
                 editPost={editPost}
-                // deletePost={deletePost}
               />
               <StyledContainer>
                {list.map((post, index) => {
                return(
                  
-               <JournalFormCard key={index} post={post} setPostEdit={setPostEdit} />
+               <JournalFormCard 
+                key={index} 
+                post={post} 
+                setPostEdit={setPostEdit} 
+                deletePost={deletePost}/>
                
                );
               })};
