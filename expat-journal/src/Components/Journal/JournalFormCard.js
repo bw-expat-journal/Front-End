@@ -11,6 +11,7 @@ const StyledCard = styled.div`
   margin: 2rem;
   text-align: center;
   border-radius: 8px;
+  justify-content: center;
 
 img{
   max-height: 500px;
@@ -43,6 +44,7 @@ img{
 
   .post-footer {
     margin: 1rem;
+    align-self: stretch;
   }
 
   button {
@@ -60,7 +62,6 @@ img{
 
 
 const JournalFormCard = ({ post, setPostEdit, deletePost }) => {
-  console.log(post)
     return (
       <StyledCard>
         {
