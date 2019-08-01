@@ -56,7 +56,18 @@ img{
   }
 
 `
+<<<<<<< HEAD
 const JournalFormCard = ({ post, setPostEdit }) => {
+=======
+// const [list, setList] = useState([...PostDetails])
+// const[postEdit, setPostEdit] = useState(null);
+
+// const editPost = post => {
+//   const editIndex = list.indexOf(postEdit);
+//   setList(list.map((submission, index) => (index === editIndex ? post : submission)))
+// }
+const JournalFormCard = ({ post, setPostEdit, deletePost }) => {
+>>>>>>> 3965d8ded6cbe0e20a9ffa5cc5f305129b34fc31
   console.log(post)
     return (
       <StyledCard>
@@ -74,6 +85,10 @@ const JournalFormCard = ({ post, setPostEdit }) => {
         
         <button onClick={() => setPostEdit(post)}>Edit</button>
         </div>
+
+        <button onClick={() => deletePost(post.id)} className="button muted-button">
+   Delete
+</button>
       
 
       </StyledCard>

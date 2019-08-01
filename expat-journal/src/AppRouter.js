@@ -46,10 +46,19 @@ const editPost = post => {
 const editIndex = list.indexOf(postEdit);
   setList(list.map((submission, index) => (index === editIndex ? post : submission)))
 }
+
+
+const deletePost = id => {
+  console.log(id);
+  setList(list.filter(post => post.id !== id));
+}
+
+
+
     return <div className="page-view-ui">
         <Switch>
             <Route 
-              exact path='/' 
+              exact path='/journals' 
               render={(props) =>
               <div> 
               <JournalForm {...props} 
@@ -63,7 +72,11 @@ const editIndex = list.indexOf(postEdit);
                {list.map((post, index) => {
                return(
                  
-               <JournalFormCard key={index} post={post} setPostEdit={setPostEdit} />
+               <JournalFormCard 
+                key={index} 
+                post={post} 
+                setPostEdit={setPostEdit} 
+                deletePost={deletePost}/>
                
                );
               })};
@@ -71,9 +84,11 @@ const editIndex = list.indexOf(postEdit);
               </div>}
             />
             <Route path='/sign-up' component={NewAccount}/>
-            <Route path='/login' component={Login}/>
-            {/* <Route path='/home' component={Home}/> */}
+
+            <Route exact path='/' component={Login}/>
+            <Route exact path='/home' component={() => window.location.href = 'https://relaxed-yonath-627a58.netlify.com/index.html'}/>
             <Route path='/home' component={() => window.location.href = 'https://expat-journal-ui.netlify.com/'}/>
+
             
         </Switch>
     </div>

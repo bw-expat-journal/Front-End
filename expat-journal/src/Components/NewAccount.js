@@ -1,9 +1,10 @@
-import React, { useState, useEffect }from 'react';
+import React, { useState }from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 
-const NewAccount = () => {
+const NewAccount = (props) => {
 
     const [inputs, setInputs] = useState({ first_name: '', last_name: '', password:'', confirm_password:'', email: ''});
 
@@ -13,6 +14,8 @@ const NewAccount = () => {
         .then(response => {
           console.log('user', response.data.token)
           localStorage.setItem('token', response.data.token)
+          props.history.push('/login')
+
           
         })
   
@@ -37,7 +40,7 @@ const NewAccount = () => {
 
       
     return (
-        <div>
+        <Content>
         <Form onSubmit = {handleSubmit}>
             <Legend>Create an Account</Legend>
             <Span>It's free and only takes a minute</Span>
@@ -65,8 +68,8 @@ const NewAccount = () => {
             </div>
             <Button type = 'submit' >Sign Up</Button>
         </Form>
-        <div class = "previous">Already Have an Account? Login Here</div>
-        </div>
+        <Previous class = "previous">Already Have an Account? <Link to = '/'>Login Here</Link></Previous>
+        </Content>
     )
 }
 
@@ -86,14 +89,12 @@ border-radius: 8px;
 color: #1f4852;
 font-size: 20px;
 width: 40rem;
-margin-top: 5rem;
+margin-top: 7rem;
 
 `
 const Legend = styled.legend`
-font-size: 28px;
+font-size: 39px;
 margin: 26px;
-
-
 `
 
 const Button = styled.button`
@@ -122,4 +123,18 @@ height: 2rem;
 const Span = styled.span`
 margin-bottom: 15px;
 font-size: 19px;
+`
+const Content = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+
+const Previous = styled.div`
+text-align: center;
+margin-top: 30px;
+margin-bottom: 6rem;
+font-size: 18px;
+color: #1f4852
+
 `
