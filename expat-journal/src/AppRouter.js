@@ -46,18 +46,27 @@ const editPost = post => {
 const editIndex = list.indexOf(postEdit);
   setList(list.map((submission, index) => (index === editIndex ? post : submission)))
 }
+
+
+const deletePost = id => {
+  setPostEdit && setPostEdit(list.filter(list => list.id !== id))
+}
+
+
+
     return <div className="page-view-ui">
         <Switch>
             <Route 
               exact path='/' 
               render={(props) =>
-              <div> 
+              {<div> 
               <JournalForm {...props} 
                 list={list} 
                 setList={setList}
                 postEdit={postEdit}
                 setPostEdit={setPostEdit}
                 editPost={editPost}
+                deletePost={deletePost}
               />
               <StyledContainer>
                {list.map((post, index) => {
@@ -68,7 +77,7 @@ const editIndex = list.indexOf(postEdit);
                );
               })};
               </StyledContainer>
-              </div>}
+              </div>}}
             />
             <Route path='/sign-up' component={NewAccount}/>
             <Route path='/login' component={Login}/>
