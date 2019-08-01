@@ -14,7 +14,7 @@ const NewAccount = (props) => {
         .then(response => {
           console.log('user', response.data.token)
           localStorage.setItem('token', response.data.token)
-          props.history.push('/login')
+          props.history.push('/journals')
 
           
         })
