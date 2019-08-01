@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import axios from 'axios';
 
 const JournalForm = ({ list, setList, postEdit, setPostEdit, editPost }) => {
 const [post, setPost] = useState({location: "", traveler: "", message: ""});
@@ -29,9 +30,32 @@ useEffect(() => {
     } else if (
         post.location !== "" &&
         post.traveler !== "" &&
-        post.submission !== "" 
+        post.message !== "" 
     ) {
-        setList([...list, post])
+
+      const sendPost = () => {
+        axios({
+          url:'https://expat-journals.herokuapp.com/api/v1/journals',
+          method: 'post',
+          headers: {
+            Authorization: localStorage.getItem('token')
+          },
+          data:{
+            message: post.message,
+            location: post.location
+           }
+        })
+        .then((res) => {
+          console.log('post', res)
+          setList([ res.data.journal, ...list])
+        })
+        .catch(err => {
+          console.log('ERR', err.response)
+        })
+      }
+      sendPost();
+
+        
     }
         setPost({ location: "", traveler: "", message: "" });
   };
@@ -95,7 +119,7 @@ const Form = styled.form`
 display: flex;
 justify-content: center;
 padding: 3px;
-background: #f1ffff;
+background: #C9E5EB;
 color: #1f4852;
 font-size: 20px;
 text-align: center;
@@ -113,8 +137,10 @@ label {
 
 .fieldbox {
   background-color: #f1ffff;
+  margin: 60px;
   width: 600px;
   border: solid 1.8px #aacddf
+  border-radius: 8px;
 }
 
 textarea {
