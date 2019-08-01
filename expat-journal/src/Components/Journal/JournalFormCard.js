@@ -76,8 +76,11 @@ const JournalFormCard = ({ post, setPostEdit, deletePost }) => {
         <p className='caption'>{post.caption}</p>
         
         <button onClick={() => setPostEdit(post)}>Edit</button>
-        <button onClick={() => deletePost(post.id)} className="button muted-button">Delete</button>
-        </div>
+
+        <button onClick={() => deletePost(post.id)} >
+   Delete
+</button>
+</div>
 
       
 

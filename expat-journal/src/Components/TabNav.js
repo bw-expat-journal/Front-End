@@ -24,7 +24,9 @@ const characterLabel = createLabel("chain", "Login")
 const panes = [
   { menuItem: <Menu.Item key='home' as={Nav} to={`/home`} content={welcomeLabel} /> },
   { menuItem: <Menu.Item key='sign-up' as={Nav} to={`/sign-up`} content={signUpLabel} /> },
-  { menuItem: <Menu.Item key='login' as={Nav} to={`/login`} content={characterLabel} /> },
+
+  { menuItem: <Menu.Item key='login' as={Nav} to={`/`} content={characterLabel} /> },
+//  { menuItem: <Menu.Item key='journals' as={Nav} to={`/journals`} content={journalsLabel} /> },
 ]
 
 const TabNav = () => <Tab panes={panes} renderActiveOnly={false} />
