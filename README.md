@@ -62,20 +62,24 @@ This application is deployed on [netlify](https://expatjournal.netlify.com/) wit
       
 ####  _/_ 
 
-```export default function Login(props) {
-    // console.log(props)
-    const [user, setUser] = useState({ email: "", password: "" })
-
-    function inputHandler(event) {
-        const updatedUser = { ...user, [event.target.name]: event.target.value };
-        // console.log(
-        //   "inputHandler",
-        //   event.target.name,
-        //   event.target.value,
-        //   updatedUser
-        // );
-        setUser(updatedUser);
-      }
+```     // add heruko api link here:
+        axios.post(`https://expat-journals.herokuapp.com/api/v1/auth/login`, user)
+          .then(res => {
+              console.log(res.data);
+            if (res.status === 200 && res.data) {
+              localStorage.setItem('token', res.data.token)
+              props.history.push('/journals')
+            }
+          })
+          .catch(err => {
+            //setUser({
+              //message: 'Authentication failed',
+              //user: { ...initialUser }
+            //})
+            if (err) console.log(err)
+          })
+      
+        
  ```
  
     
