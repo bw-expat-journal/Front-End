@@ -9,7 +9,7 @@ Check out the Application [Here](https://expatjournal.netlify.com/)
 [Product Canvas](https://docs.google.com/document/d/1EGGg6r0eoXauKAv70OptMaCKRBlZm1BM_5miGzqpHQI/edit?usp=sharing)
 
 #### Link to Trello Board
-[Trello Board](#https://trello.com/invite/b/AkDhyNNS/47e01b6a85fab8031314983edaad6ab7/ex-pat-journal-development)
+[Trello Board](https://trello.com/expatjournal/home)
 
 ### Key Features
 
@@ -21,11 +21,11 @@ Check out the Application [Here](https://expatjournal.netlify.com/)
 ## Tech Stack
 
 ### Front end build using: 
-#### REACT
+ REACT
 
-#### Front end deployed using [Netlify](https://www.netlify.com/)
+ Front end deployed using [Netlify](https://www.netlify.com/)
 
-### [Back end](https://github.com/bw-expat-journal/Back-End) deployed on [Heroku](https://expat-journals.herokuapp.com/)
+ [Back end](https://github.com/bw-expat-journal/Back-End) deployed on [Heroku](https://expat-journals.herokuapp.com/)
 
 ## Installation
 
