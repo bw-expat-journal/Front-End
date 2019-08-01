@@ -6,11 +6,12 @@ const StyledHeader = styled.header`
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
   background: #1F4852;
   color: white;
-  width: 100%;
+  // width: 100%;
   
   img {
     width: 25%;
     margin-left: 8%;
+    margin: 2%;
   }
   display: flex;
   justify-content: space-between;
@@ -27,7 +28,7 @@ const StyledHeader = styled.header`
       padding: 1rem;
       text-transform: uppercase;
       font-family: 'Raleway', sans-serif;
-      font-size: 2.5rem;
+      font-size: 1.9rem;
     }
   }
 `

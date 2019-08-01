@@ -14,23 +14,8 @@ code {
     monospace;
 }
 
-/* main{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
 button:hover{
-
-  background: #f1ffff;
+  background: #c9e5eb;
   color: #1f4852;
-  border: 1.8px solid #aacddf;
-}
 
-/* .previous{
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 6rem;
-  font-size: 18px;
-  color: #1f4852
-/* } */ 
+}
