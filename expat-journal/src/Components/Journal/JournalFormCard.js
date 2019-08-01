@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledCard = styled.div`
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
   background: white;
   width: 30%;
   display: flex;
@@ -9,20 +10,34 @@ const StyledCard = styled.div`
   border: 1px solid black;
   margin: 2rem;
   text-align: center;
+  border-radius: 8px;
+
+img{
+  max-height: 500px;
+  border-radius: 8px;
+}
 
   p.location {
     font-size: 1.5rem; 
     text-align: center;
+    font-family: 'Raleway', sans-serif;
     img {
       width: 1.3rem;
       padding-right: .5rem;
     }
   }
 
+  p.caption {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    justify-content: center; 
+  }
+
   p.message {
     margin: 2rem;
-    font-size: 4rem;
+    font-size: 2.5rem;
     text-align: center;
+    font-family: 'Raleway', sans-serif;
   }
 
   .post-footer {
@@ -30,15 +45,20 @@ const StyledCard = styled.div`
   }
 
   button {
-    text-align: center;
-    padding: 1rem 2rem;
-    border-radius:  15px;
-    border: none;
-    background: #3C8C9E;
-    color: white;
+      border-radius: 8px;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      margin: 15px;
+      margin-top: 15px;
+      background: #3C8C9E
+      font-size: 1rem;
   }
 
 `
+<<<<<<< HEAD
+const JournalFormCard = ({ post, setPostEdit }) => {
+=======
 // const [list, setList] = useState([...PostDetails])
 // const[postEdit, setPostEdit] = useState(null);
 
@@ -47,6 +67,7 @@ const StyledCard = styled.div`
 //   setList(list.map((submission, index) => (index === editIndex ? post : submission)))
 // }
 const JournalFormCard = ({ post, setPostEdit, deletePost }) => {
+>>>>>>> 3965d8ded6cbe0e20a9ffa5cc5f305129b34fc31
   console.log(post)
     return (
       <StyledCard>
