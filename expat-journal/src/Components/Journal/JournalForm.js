@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
 import styled from 'styled-components';
 import axios from 'axios';
+
 
 const JournalForm = ({ list, setList, postEdit, setPostEdit, editPost }) => {
 const [post, setPost] = useState({location: "", traveler: "", message: ""});
@@ -119,7 +121,9 @@ const Form = styled.form`
 display: flex;
 justify-content: center;
 padding: 3px;
+
 background: #C9E5EB;
+
 color: #1f4852;
 font-size: 20px;
 text-align: center;
@@ -141,6 +145,9 @@ label {
   width: 600px;
   border: solid 1.8px #aacddf
   border-radius: 8px;
+  width: 600px;
+  border: solid 1.8px #aacddf
+
 }
 
 textarea {

@@ -53,9 +53,11 @@ img{
       margin: 15px;
       margin-top: 15px;
       background: #3C8C9E;
+
       font-size: 1rem;
   }
   `
+
 
 const JournalFormCard = ({ post, setPostEdit, deletePost }) => {
   console.log(post)
