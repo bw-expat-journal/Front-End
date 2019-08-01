@@ -100,6 +100,7 @@ This application is deployed on [netlify](https://expatjournal.netlify.com/) wit
       
         
  ```
+ ---
  
  ## Contributors
  
