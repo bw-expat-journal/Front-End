@@ -65,9 +65,9 @@ const JournalFormCard = ({ post, setPostEdit }) => {
         <button onClick={() => setPostEdit(post)}>Edit</button>
         </div>
 
-        <button onClick={() => props.deleteUser(user.id)} className="button muted-button">
-  Delete
-</button>
+        {/* <button onClick={() => deletePost(list.id)} className="button muted-button"> */}
+  {/* Delete
+</button> */}
       
 
       </StyledCard>

@@ -48,9 +48,9 @@ const editIndex = list.indexOf(postEdit);
 }
 
 
-const deletePost = id => {
-  setPostEdit && setPostEdit(list.filter(list => list.id !== id))
-}
+// const deletePost = id => {
+//   setPostEdit(list.filter(list => list.id !== id))
+// }
 
 
 
@@ -59,14 +59,14 @@ const deletePost = id => {
             <Route 
               exact path='/' 
               render={(props) =>
-              {<div> 
+              <div> 
               <JournalForm {...props} 
                 list={list} 
                 setList={setList}
                 postEdit={postEdit}
                 setPostEdit={setPostEdit}
                 editPost={editPost}
-                deletePost={deletePost}
+                // deletePost={deletePost}
               />
               <StyledContainer>
                {list.map((post, index) => {
@@ -77,7 +77,7 @@ const deletePost = id => {
                );
               })};
               </StyledContainer>
-              </div>}}
+              </div>}
             />
             <Route path='/sign-up' component={NewAccount}/>
             <Route path='/login' component={Login}/>

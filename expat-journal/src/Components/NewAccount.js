@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 
-const NewAccount = () => {
+const NewAccount = (props) => {
 
     const [inputs, setInputs] = useState({ first_name: '', last_name: '', password:'', confirm_password:'', email: ''});
 
@@ -13,6 +13,8 @@ const NewAccount = () => {
         .then(response => {
           console.log('user', response.data.token)
           localStorage.setItem('token', response.data.token)
+          props.history.push('/login')
+
           
         })
   
