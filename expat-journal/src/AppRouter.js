@@ -28,12 +28,10 @@ useEffect (() => {
           Authorization: localStorage.getItem('token')
         }
       })
-      .then((res) => {
-        console.log('post', res)
+      .then((res) => { 
          setList(res.data.journals.sort((a,b) => b.id - a.id));
       })
-      .catch(err => {
-        console.log('ERR', err.response)
+      .catch(err => {  
       })
     }
     getPost();
@@ -57,19 +55,24 @@ const editPost = post => {
      }
   })
   .then((res) => {
-    console.log('post', res)
-    //setList([...list, res.data.journal])
     setList(list.map((submission, index) => (index === editIndex ? res.data.journal : submission)))
   })
   .catch(err => {
-    console.log('ERR', err.response)
   })
 }
-
-
 const deletePost = id => {
-  console.log(id);
-  setList(list.filter(post => post.id !== id));
+  axios({
+    url:`https://expat-journals.herokuapp.com/api/v1/journals/${id}`,
+    method: 'delete',
+    headers: {
+      Authorization: localStorage.getItem('token')
+    }
+  })
+  .then((res) => {
+    setList(list.filter(post => post.id !== id));
+  })
+  .catch(err => {
+  })
 }
 
 

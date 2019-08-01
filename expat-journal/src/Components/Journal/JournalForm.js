@@ -48,11 +48,9 @@ useEffect(() => {
            }
         })
         .then((res) => {
-          console.log('post', res)
           setList([ res.data.journal, ...list])
         })
         .catch(err => {
-          console.log('ERR', err.response)
         })
       }
       sendPost();
