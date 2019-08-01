@@ -36,12 +36,12 @@ This application is deployed on [netlify](https://expatjournal.netlify.com/) wit
 
 | Method                              | Functionality                                                                                 | Route                    |
 | ----------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------- |
-| POST _/sign-up_                | Create a user account                                                                         | `/signup`         |
-| POST _/_                  | Login as an user                                                                                  | `/`          |
+|  _/sign-up_                | Create a user account                                                                         | `/signup`         |
+|  _/_                  | Login as an user                                                                                  | `/`          |
 
 #### Request to Axios
 
-#### Post _/sign-up_
+#### _/sign-up_
 
 ```  const registerUser = (newUser) => {
         axios.post('https://expat-journals.herokuapp.com/api/v1/auth/signup',newUser)
@@ -60,7 +60,7 @@ This application is deployed on [netlify](https://expatjournal.netlify.com/) wit
       } 
 ```
       
-#### Post _/_ 
+####  _/_ 
 
 ```export default function Login(props) {
     // console.log(props)
