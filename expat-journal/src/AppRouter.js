@@ -73,7 +73,7 @@ const editIndex = list.indexOf(postEdit);
             <Route path='/sign-up' component={NewAccount}/>
             <Route path='/login' component={Login}/>
             {/* <Route path='/home' component={Home}/> */}
-            <Route path='/home' component={() => window.location.href = 'https://relaxed-yonath-627a58.netlify.com/index.html'}/>
+            <Route path='/home' component={() => window.location.href = 'https://expat-journal-ui.netlify.com/'}/>
             
         </Switch>
     </div>
