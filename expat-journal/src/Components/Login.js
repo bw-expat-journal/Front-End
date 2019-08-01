@@ -6,7 +6,6 @@ const initialUser = {
     password: '',
   }
 
-
 export default function Login(props) {
     // console.log(props)
     const [user, setUser] = useState({ email: "", password: "" })
