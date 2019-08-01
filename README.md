@@ -101,5 +101,11 @@ This application is deployed on [netlify](https://expatjournal.netlify.com/) wit
         
  ```
  
-    
+ ## Contributors
+ 
+ ## Blake Proutry [GitHub](https://github.com/Prouty89)
+  
+ ## Rosa Perez [GitHub](https://github.com/paintedlbird7)
+ 
+ ## Kenya Alston [GitHub](https://github.com/Kenya-a)
     
