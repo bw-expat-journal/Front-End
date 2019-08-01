@@ -1,5 +1,8 @@
 import React, { Component,useState } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 
 const initialUser = {
     email: '',
@@ -83,7 +86,7 @@ return (
           : undefined
         }  */}
     </div>
-    <Previous class = "previous">Need an account? <Link to = '/sign-up'>Sign Up</Link></Previous>
+    <Previous class = "previous">Need an account? <Link to = '/sign-up'>Sign Up </Link></Previous>
 </Content>
   );
 }
