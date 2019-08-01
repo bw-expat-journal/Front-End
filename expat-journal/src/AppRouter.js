@@ -86,7 +86,6 @@ const deletePost = id => {
             <Route path='/sign-up' component={NewAccount}/>
 
             <Route exact path='/' component={Login}/>
-            <Route exact path='/home' component={() => window.location.href = 'https://relaxed-yonath-627a58.netlify.com/index.html'}/>
             <Route path='/home' component={() => window.location.href = 'https://expat-journal-ui.netlify.com/'}/>
 
             

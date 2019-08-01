@@ -1,11 +1,12 @@
 import React, { Component,useState } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const initialUser = {
     email: '',
     password: '',
   }
-
 
 export default function Login(props) {
     // console.log(props)
@@ -34,7 +35,7 @@ export default function Login(props) {
               console.log(res.data);
             if (res.status === 200 && res.data) {
               localStorage.setItem('token', res.data.token)
-              props.history.push('/')
+              props.history.push('/journals')
             }
           })
           .catch(err => {
@@ -83,7 +84,7 @@ return (
           : undefined
         }  */}
     </div>
-    <Previous class = "previous">Need an account? <Link to = '/sign-up'>Sign Up</Link></Previous>
+    <Previous class = "previous">Need an account? <Link to = '/sign-up'>Sign Up </Link></Previous>
 </Content>
   );
 }
