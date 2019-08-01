@@ -98,7 +98,7 @@ const deletePost = id => {
                 deletePost={deletePost}/>
                
                );
-              })};
+              })}
               </StyledContainer>
               </div>}
             />
