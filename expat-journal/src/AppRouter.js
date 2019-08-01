@@ -30,7 +30,7 @@ useEffect (() => {
       })
       .then((res) => {
         console.log('post', res)
-         setList(res.data.journals)
+         setList(res.data.journals.sort((a,b) => b.id - a.id));
       })
       .catch(err => {
         console.log('ERR', err.response)
@@ -43,8 +43,27 @@ useEffect (() => {
 
 const[postEdit, setPostEdit] = useState(null);
 const editPost = post => {
-const editIndex = list.indexOf(postEdit);
-  setList(list.map((submission, index) => (index === editIndex ? post : submission)))
+  const editIndex = list.indexOf(postEdit);
+  const id = list[editIndex].id
+  axios({
+    url:`https://expat-journals.herokuapp.com/api/v1/journals/${id}`,
+    method: 'put',
+    headers: {
+      Authorization: localStorage.getItem('token')
+    },
+    data:{
+      message: post.message,
+      location: post.location
+     }
+  })
+  .then((res) => {
+    console.log('post', res)
+    //setList([...list, res.data.journal])
+    setList(list.map((submission, index) => (index === editIndex ? res.data.journal : submission)))
+  })
+  .catch(err => {
+    console.log('ERR', err.response)
+  })
 }
 
 

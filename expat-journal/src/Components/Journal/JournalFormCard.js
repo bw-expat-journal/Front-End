@@ -37,11 +37,12 @@ img{
     margin: 2rem;
     font-size: 2.5rem;
     text-align: center;
+    position: relative;
     font-family: 'Raleway', sans-serif;
   }
 
   .post-footer {
-    margin: 2rem;
+    margin: 1rem;
   }
 
   button {
@@ -51,18 +52,13 @@ img{
       padding: 15px 32px;
       margin: 15px;
       margin-top: 15px;
-      background: #3C8C9E
+      background: #3C8C9E;
+
       font-size: 1rem;
   }
+  `
 
-`
-// const [list, setList] = useState([...PostDetails])
-// const[postEdit, setPostEdit] = useState(null);
 
-// const editPost = post => {
-//   const editIndex = list.indexOf(postEdit);
-//   setList(list.map((submission, index) => (index === editIndex ? post : submission)))
-// }
 const JournalFormCard = ({ post, setPostEdit, deletePost }) => {
   console.log(post)
     return (
