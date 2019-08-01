@@ -6,7 +6,26 @@ Check out the Application [Here](https://expatjournal.netlify.com/)
 
 
 # Link to Product Canvas 
-https://docs.google.com/document/d/1EGGg6r0eoXauKAv70OptMaCKRBlZm1BM_5miGzqpHQI/edit?usp=sharing
+[Product Canvas] (https://docs.google.com/document/d/1EGGg6r0eoXauKAv70OptMaCKRBlZm1BM_5miGzqpHQI/edit?usp=sharing)
+
+#### Link to Trello Board
+[Trello Board] (#https://trello.com/invite/b/AkDhyNNS/47e01b6a85fab8031314983edaad6ab7/ex-pat-journal-development)
+
+### Key Features
+
+- User can sign up and sign in.
+- User can create stories.
+- User can view stories.
+- User can update and delete stories.
+
+## Tech Stack
+
+### Front end build using: 
+#### REACT
+
+#### Front end deployed using [Netlify] (https://www.netlify.com/)
+
+### [Back end] (https://github.com/bw-expat-journal/Back-End) deployed on [Heroku](https://expat-journals.herokuapp.com/)
 
 ## Installation
 
@@ -84,8 +103,3 @@ This application is deployed on [netlify](https://expatjournal.netlify.com/) wit
  
     
     
-![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
