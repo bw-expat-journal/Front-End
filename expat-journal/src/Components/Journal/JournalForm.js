@@ -150,13 +150,16 @@ textarea {
   border-radius: 8px;
   border: solid 1.8px #aacddf;
   margin: 8px;
+  font-size: 1.5rem;
 }
 
 .travel {
   margin: 8px;
   border-radius: 8px;
   height: 2rem;
-  border: solid 1.8px #aacddf
+  border: solid 1.8px #aacddf;
+  font-size: 1.5rem;
+
 }
 
 
@@ -165,6 +168,7 @@ textarea {
   border-radius: 8px;
   height: 2rem;
   border: solid 1.8px #aacddf
+  font-size: 1.5rem;
 }
 
 .button {

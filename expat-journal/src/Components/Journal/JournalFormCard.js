@@ -16,9 +16,6 @@ const JournalFormCard = ({ post, setPostEdit, deletePost }) => {
 
         <button onClick={() => deletePost(post.id)}>Delete</button>
 </div>
-
-      
-
       </StyledCard>
     );
   };
@@ -44,7 +41,6 @@ img{
   max-height: 500px;
   border-radius: 8px;
   object-fit: cover;
-  
 }
 
   p.location {
@@ -84,7 +80,6 @@ img{
       margin: 15px;
       margin-top: 15px;
       background: #3C8C9E;
-
       font-size: 1rem;
   }
   `
