@@ -119,7 +119,6 @@ const Form = styled.form`
 display: flex;
 justify-content: center;
 padding: 3px;
-
 background: #C9E5EB;
 
 color: #1f4852;
