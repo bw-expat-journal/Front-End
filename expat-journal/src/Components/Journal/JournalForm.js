@@ -140,11 +140,10 @@ label {
 .fieldbox {
   background-color: #f1ffff;
   margin: 60px;
-  width: 600px;
+  width: 725px;
   border: solid 1.8px #aacddf
   border-radius: 8px;
-  width: 600px;
-  border: solid 1.8px #aacddf
+  border: solid 1.8px #aacddf;
 
 }
 

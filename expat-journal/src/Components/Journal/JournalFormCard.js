@@ -1,7 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledCard = styled.div`
+const JournalFormCard = ({ post, setPostEdit, deletePost }) => {
+    return (
+      <StyledCard>
+        {post.image_url &&  <img src= {post.image_url} alt= ''/>}
+        {post.message &&  <p className='message'>{post.message}</p>}
+       <div className='post-footer'>
+        <p className='location'>
+        <img src='https://image.flaticon.com/icons/svg/149/149984.svg' alt='location'/>
+        {post.location}</p> 
+        <p className='caption'>{post.caption}</p>
+        
+        <button onClick={() => setPostEdit(post)}>Edit</button>
+
+        <button onClick={() => deletePost(post.id)}>Delete</button>
+</div>
+
+      
+
+      </StyledCard>
+    );
+  };
+  
+  export default JournalFormCard;
+
+  const StyledCard = styled.div`
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
   background: white;
   width: 30%;
@@ -12,10 +36,15 @@ const StyledCard = styled.div`
   text-align: center;
   border-radius: 8px;
   justify-content: center;
+  align-self: flex-start;
+  min-height: 500px;
+  border: 1.8px solid #aacddf;
 
 img{
   max-height: 500px;
   border-radius: 8px;
+  object-fit: cover;
+  
 }
 
   p.location {
@@ -59,34 +88,3 @@ img{
       font-size: 1rem;
   }
   `
-
-
-const JournalFormCard = ({ post, setPostEdit, deletePost }) => {
-    return (
-      <StyledCard>
-        {
-          post.image_url &&  <img src= {post.image_url} alt= ''/> 
-        }
-        {
-          post.message &&  <p className='message'>{post.message}</p>
-        }
-       <div className='post-footer'>
-        <p className='location'>
-        <img src='https://image.flaticon.com/icons/svg/149/149984.svg' alt='location'/>
-        {post.location}</p> 
-        <p className='caption'>{post.caption}</p>
-        
-        <button onClick={() => setPostEdit(post)}>Edit</button>
-
-        <button onClick={() => deletePost(post.id)} >
-   Delete
-</button>
-</div>
-
-      
-
-      </StyledCard>
-    );
-  };
-  
-  export default JournalFormCard;
