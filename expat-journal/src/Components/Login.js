@@ -103,7 +103,7 @@ margin:5px;
 border-radius: 8px;
 color: #1f4852;
 font-size: 20px;
-width: 31rem;
+width: 40rem;
 margin-top: 7rem;
 height: 25rem;
 
